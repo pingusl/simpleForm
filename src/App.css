@@ -1,2 +1,9 @@
-
-
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15rem;
+}
+.inactive {
+  display: none;
+}
