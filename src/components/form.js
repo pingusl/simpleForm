@@ -1,20 +1,17 @@
 //----Loading library----//
 import { useState } from "react";
-
-const Form = () => {
+import Field from "./field";
+const Form = (props) => {
   //----states creation----(one state by field)//
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [spy, setSpy] = useState(false);
 
   //----Actions on button Click----//
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Passage dans fonction HandleSubmit");
-    console.log(`line 16 spy= ${spy}`);
-    //alert("Formulaire envoyé!");
+
     //----Remise a vide du formulaire----//
     // setUsername("");
     // setEmail("");
@@ -22,50 +19,58 @@ const Form = () => {
     // setConfirmPassword("");
   };
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <input
-        placeholder="username"
-        type="text"
-        onChange={(event) => {
-          setUsername(event.target.value);
-        }}
-        value={username}
-      />
-      <input
-        placeholder="email"
-        type="text"
-        onChange={(event) => {
-          setEmail(event.target.value);
-        }}
-        value={email}
-      />
-      <input
-        placeholder="password"
-        type="text"
-        onChange={(event) => {
-          setPassword(event.target.value);
-        }}
-        value={password}
-      />
-
-      <input
-        placeholder="confirmPassword"
-        type="text"
-        onChange={(event) => {
-          setConfirmPassword(event.target.value);
-        }}
-        value={confirmPassword}
-        className={spy === true ? "inactive" : "active"}
-      />
-      <input
-        className="valid-bt"
-        type="submit"
-        value="Register"
-        onClick={(event) => {
-          spy === true ? setSpy(false) : setSpy(true);
-        }}
-      />
-    </form>
+    <div className={props.connector === true ? "active" : "inactive"}>
+      <form className="form" onSubmit={handleSubmit}>
+        <div className="field">
+          <label>Name</label>
+          <input
+            name="name"
+            placeholder="username"
+            type="text"
+            onChange={(event) => {
+              setUsername(event.target.value);
+            }}
+            value={username}
+          />
+        </div>
+        <div className="field">
+          <label>Email</label>
+          <input
+            name="email"
+            placeholder="email"
+            type="text"
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+            value={email}
+          />
+        </div>
+        <div className="field">
+          <label>Password</label>
+          <input
+            name="password"
+            placeholder="password"
+            type="text"
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+            value={password}
+          />
+        </div>
+        <div className="field">
+          <label>Confirm Password</label>
+          <input
+            name="confirmpassword"
+            placeholder="confirm your password"
+            type="text"
+            onChange={(event) => {
+              setConfirmPassword(event.target.value);
+            }}
+            value={confirmPassword}
+          />
+        </div>
+      </form>
+    </div>
   );
 };
 export default Form;

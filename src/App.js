@@ -1,31 +1,46 @@
+//----Loading State----//
+import { useState } from "react";
 //----Loading CSS -----/
 import "./App.css";
-//----Loading library----//
-import { useState } from "react";
-//----Import Components----//
-import Form from "./components/form";
 
-function App() {
+//----Import Components----//
+import Header from "./components/header";
+import Form from "./components/form";
+import StepTwo from "./components/stepTwo";
+import Footer from "./components/footer";
+function App(props) {
   //----states creation----(one state by field)//
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  // const [username, setUsername] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [confirmPassword, setConfirmPassword] = useState("");
+  const [spy, setSpy] = useState(false);
+
   //----Actions on button Click----//
   const handleSubmit = (event) => {
     event.preventDefault();
-    //console.log("Passage dans fonction HandleSubmit");
-    alert("Formulaire envoyé!");
-    //----Remise a vide du formulaire----//
-    // setUsername("");
-    // setEmail("");
-    // setPassword("");
-    // setConfirmPassword("");
+    alert(`Formulaire envoyé!`);
   };
   //----Form creation----//
   return (
     <div className="App">
-      <Form />
+      <Header />
+      <Form connector={spy} />
+      <StepTwo
+        connector={spy}
+        username={props.username}
+        email={props.email}
+        password={props.password}
+      />
+      <input
+        className="valid-bt"
+        type="submit"
+        value={spy === true ? "Register" : "Edit your information"}
+        onClick={(event) => {
+          spy === true ? setSpy(false) : setSpy(true);
+        }}
+      />
+      <Footer />
     </div>
   );
 }

@@ -1,9 +1,50 @@
+.App {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+/* Header */
+.header {
+  display: flex;
+}
+
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 15rem;
+  margin-top: 10rem;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+}
+.steptwo {
+  display: flex;
+  flex-direction: column;
+
+  width: 15rem;
+  margin-top: 10rem;
 }
 .inactive {
   display: none;
+}
+.valid-bt {
+  margin-top: 3rem;
+  background-color: #5c48d3;
+  border-radius: 15%;
+  color: white;
+  height: 1.5rem;
+  margin-top: 1rem;
+}
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+}
+.bold-span {
+  font-weight: bold;
 }
