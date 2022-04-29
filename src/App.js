@@ -24,12 +24,12 @@ function App(props) {
   // const form = <h1>Form</h1>;
   // const stepTwo = <h1>stepTwo</h1>;
   //----Action on Event----//
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (password !== confirmPass) {
-      alert("Vos deux mots de passe ne sont pas identique!");
-    }
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   if (password !== confirmPass) {
+  //     alert("Vos deux mots de passe ne sont pas identique!");
+  //   }
+  // };
   //----Control Form and StepTwo----(conditionning)//
 
   return (

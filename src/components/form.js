@@ -41,7 +41,7 @@ const Form = ({
           <input
             name="email"
             placeholder="email"
-            type="text"
+            type="email"
             onChange={(event) => {
               setEmail(event.target.value);
             }}
@@ -53,7 +53,7 @@ const Form = ({
           <input
             name="password"
             placeholder="password"
-            type="text"
+            type="password"
             onChange={(event) => {
               setPassword(event.target.value);
             }}
@@ -65,7 +65,7 @@ const Form = ({
           <input
             name="confirmpassword"
             placeholder="confirm your password"
-            type="text"
+            type="password"
             onChange={(event) => {
               setConfirmPass(event.target.value);
             }}

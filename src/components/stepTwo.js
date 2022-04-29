@@ -1,18 +1,18 @@
-const StepTwo = (props) => {
+const StepTwo = ({ username, email, password, setTiggerSwitch }) => {
   return (
     <div>
       <div>
         <div className="result">
           <span>Name:</span>
-          <span>{props.username}</span>
+          <span>{username}</span>
         </div>
         <div className="result">
           <span>Email:</span>
-          <span>{props.email}</span>
+          <span>{email}</span>
         </div>
         <div className="result">
           <span>Password:</span>
-          <span>{props.password}</span>
+          <span>{password}</span>
         </div>
       </div>
 
@@ -22,7 +22,8 @@ const StepTwo = (props) => {
           type="submit"
           value="Edit your information"
           onClick={(event) => {
-            props.connector = false;
+            event.preventDefault();
+            setTiggerSwitch(false);
           }}
         />
       </div>
