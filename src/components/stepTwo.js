@@ -21,6 +21,9 @@ const StepTwo = (props) => {
           className="valid-bt"
           type="submit"
           value="Edit your information"
+          onClick={(event) => {
+            props.connector = false;
+          }}
         />
       </div>
     </div>

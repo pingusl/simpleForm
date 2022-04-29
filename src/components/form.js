@@ -15,7 +15,11 @@ const Form = (props) => {
     if (password != confirmPassword) {
       alert("Vos deux mots de passe ne sont pas identique!");
     } else {
-      setSpy(true);
+      if (spy === true) {
+        setSpy(false);
+      } else {
+        setSpy(true);
+      }
     }
   };
 
