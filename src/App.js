@@ -45,9 +45,17 @@ function App(props) {
           setPassword={setPassword}
           confirmPass={confirmPass}
           setConfirmPass={setConfirmPass}
+          tiggerSwitch={tiggerSwitch}
+          setTiggerSwitch={setTiggerSwitch}
         />
       ) : (
-        <StepTwo />
+        <StepTwo
+          username={username}
+          email={email}
+          password={password}
+          tiggerSwitch={tiggerSwitch}
+          setTiggerSwitch={setTiggerSwitch}
+        />
       )}
       <Footer />
     </div>

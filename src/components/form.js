@@ -1,4 +1,4 @@
-const Form = (
+const Form = ({
   username,
   setUsername,
   email,
@@ -6,12 +6,24 @@ const Form = (
   password,
   setPassword,
   confirmPass,
-  setConfirmPass
-) => {
-  console.log(`line 11 --username: ${username}`);
+  setConfirmPass,
+
+  setTiggerSwitch,
+}) => {
+  // console.log(`line 11 --username: ${username}`);
   return (
     <div>
-      <form className="form">
+      <form
+        className="form"
+        onSubmit={(event) => {
+          event.preventDefault();
+          if (password !== confirmPass) {
+            alert("Vos deux mots de passe ne sont pas identique!");
+          } else {
+            setTiggerSwitch(true);
+          }
+        }}
+      >
         <div className="field">
           <label>Name</label>
           <input
