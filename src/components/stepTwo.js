@@ -1,6 +1,6 @@
 const StepTwo = (props) => {
   return (
-    <div className={props.connector === false ? "inactive" : "active steptwo"}>
+    <div>
       <div>
         <div className="result">
           <span>Name:</span>
