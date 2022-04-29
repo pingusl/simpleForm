@@ -1,22 +1,28 @@
 const StepTwo = (props) => {
   return (
-    <div className={props.connector === true ? "inactive" : "active steptwo"}>
+    <div className={props.connector === false ? "inactive" : "active steptwo"}>
       <div>
         <div className="result">
-          <span>Name</span>
-          <span>{props.name}</span>
+          <span>Name:</span>
+          <span>{props.username}</span>
         </div>
         <div className="result">
-          <span>Email</span>
+          <span>Email:</span>
           <span>{props.email}</span>
         </div>
         <div className="result">
-          <span>Password</span>
+          <span>Password:</span>
           <span>{props.password}</span>
         </div>
       </div>
 
-      <div>Edit your information</div>
+      <div>
+        <input
+          className="valid-bt"
+          type="submit"
+          value="Edit your information"
+        />
+      </div>
     </div>
   );
 };
